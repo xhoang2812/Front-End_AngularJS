@@ -1,0 +1,94 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+    integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"
+    integrity="sha512-y1qD3hz/IAf8W4+/UMLZ+CN6LIoUGi7srWJ3r1R17Hid8x0yXe+1B5ZelkaL1Mjzedzu0Cg3HBvDG02SAgSzBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+<div class="p-4" style="min-height: 800px;">
+    <h4 class="text-primary mb-4">Quản Lý Sản Phẩm</h4>
+    <div>
+        <form class="row g-3" >
+            <div class="col-md-6">
+                <select class="form-control" ng-model="data.IDNgDung" ng-change="changeUserId()">
+                    <option value disabled ="" hidden>Chọn người thêm</option>
+                    <option value="{{value.id}}" ng-repeat="value in NgDung" ng-if="value.role == 1 || value.role == 2 " >{{value.name}}</option>
+                </select>
+                <span ng-show ="validate.IDNgDung" class="form-check">Vui lòng chọn người thêm</span>
+            </div>
+            <div class="col-md-6">
+                <select class="form-control" ng-model="data.img" ng-change="changeImg()">
+                    <option value disabled ="" hidden>Chọn ảnh</option>
+                    <option value="content1.webp"><img src="./imgDsachSp/content1.webp"></img></option>
+                    <option value="content2.webp"><img src="./imgDsachSp/content2.webp"></img></option>
+                    <option value="content3.webp"><img src="./imgDsachSp/content3.webp"></img></option>
+                </select>
+                <span ng-show ="validate.img" class="form-check">Vui lòng chọn ảnh</span>
+            </div>
+            <div class="col-md-4">
+                <label  class="form-label">Tên Sản Phẩm</label>
+                <input type="text" class="form-control"  ng-model="data.name" ng-change="changeName()">
+                <span ng-show ="validate.name" class="form-check">Vui lòng nhập đầy đủ tên Sản Phẩm</span>
+            </div>
+            <div class="col-md-4">
+                <label  class="form-label">Loại sản phẩm</label>
+                <select class="form-select"  ng-model="data.type" ng-change="changeType()">
+                    <option value disabled ="" hidden>Chọn loại sản phẩm</option>
+                    <option ng-value="1">Điện thoại</option>
+                    <option ng-value="2">Laptop</option>
+                    <option ng-value="3">Tablet</option>
+                </select>
+                <span ng-show ="validate.type" class="form-check">Vui lòng nhập chọn loại sản phẩm</span>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Giá bán</label>
+                <input type="text" class="form-control" ng-model="data.price" ng-keypress="changePrice()" ng-change="convertToNumber()" >
+                <span ng-show ="validate.price1" class="form-check">Vui lòng nhập đầy đủ giá</span>
+                <span ng-show ="validate.price2" class="form-check">Vui lòng nhập giá là số dương</span>
+                <span ng-show ="validate.price3" class="form-check">Vui lòng nhập giá là kiểu số</span>
+            </div>
+            <div class="col-md-4">
+                <label  class="form-label">Hãng sản xuất</label>
+                <select class="form-select" ng-model="data.brand" ng-change="changeBrand()">
+                    <option value disabled ="" hidden>Chọn thương hiệu</option>
+                    <option ng-value="1">Apple</option>
+                    <option ng-value="2">SamSung</option>
+                    <option ng-value="3">Redmin</option>
+                </select>
+                <span ng-show ="validate.brand" class="form-check">Vui lòng chọn thương hiệu</span>
+            </div>
+            <div class="col-md-4">
+                <label  class="form-label">Số lượng</label>
+                <input type="text" class="form-control" ng-model="data.quantity" ng-change="changeQuantity()">
+                <span ng-show ="validate.quantity1" class="form-check">Vui lòng nhập đầy đủ số lượng</span>
+                <span ng-show ="validate.quantity2" class="form-check">Vui lòng nhập số lượng là số dương</span>
+                <span ng-show ="validate.quantity3" class="form-check">Vui lòng nhập số lượng là kiểu số </span>
+            </div>
+            <div class="col-md-4">
+                <label  class="form-label">Trạng thái</label>
+                <select class="form-select" ng-model="data.status" ng-change="changeStatus()">
+                    <option value disabled ="" hidden>Chọn trạng thái</option>
+                    <option ng-value="1">Sẵn hàng</option>
+                    <option ng-value="2">Hết hàng</option>
+                </select>
+                <span ng-show ="validate.status" class="form-check">Vui lòng chọn trạng thái</span>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-info" ng-click="add()">Thêm</button>
+                <button class="btn btn-success" ng-click="clear()">Làm mới</button>
+            </div>
+        </form>
+    </div>

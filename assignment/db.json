@@ -1,0 +1,175 @@
+{
+  "nguoiDung": [
+    {
+      "id": "1",
+      "name": "Nguyễn Xuân Hoàng",
+      "email": "hoangnxph36271@gmail.com",
+      "phone": "0334921271",
+      "user": "hoang1",
+      "pass": "hoang1",
+      "role": 1
+    },
+    {
+      "id": "2",
+      "name": "Phạm Đức Duy",
+      "email": "duypdph1234@gmail.com",
+      "phone": "0977293862",
+      "user": "duy1",
+      "pass": "duy1",
+      "role": 2
+    },
+    {
+      "id": "3",
+      "name": "Nguyễn Mạnh Tuấn",
+      "email": "tuannm9876@gmail.com",
+      "phone": "0977293863",
+      "user": "tuan1",
+      "pass": "tuan1",
+      "role": 3
+    },
+    {
+      "id": "697f",
+      "name": "Nguyễn Phương Anh",
+      "email": "anhpn@fpt.edu.vn",
+      "phone": "43454353478",
+      "user": "phanh1",
+      "pass": "phanh1",
+      "role": 2
+    },
+    {
+      "id": "f7df",
+      "name": "fdsafs",
+      "email": "fdssdff@gmail.com",
+      "phone": "54353453",
+      "user": "han1",
+      "pass": "han1",
+      "role": 3
+    }
+  ],
+  "sanPham": [
+    {
+      "id": "1",
+      "IDNgDung": "1",
+      "img": "content1.webp",
+      "name": "Xiaomi Redmi Note 13",
+      "type": 1,
+      "price": 9000000,
+      "brand": 3,
+      "quantity": "100",
+      "status": 1
+    },
+    {
+      "id": "2",
+      "IDNgDung": "1",
+      "img": "content2.webp",
+      "name": "Iphone 15 ProMax|VN",
+      "type": 1,
+      "price": 30000000,
+      "brand": 1,
+      "quantity": "250",
+      "status": 1
+    },
+    {
+      "id": "3",
+      "IDNgDung": " 2",
+      "img": "content3.webp",
+      "name": "SamSungGalaxy S23 Utra",
+      "type": 1,
+      "price": 50000000,
+      "brand": 2,
+      "quantity": "300",
+      "status": 1
+    },
+    {
+      "id": "ee25",
+      "IDNgDung": "697f",
+      "name": "Macbook Pro",
+      "type": 2,
+      "price": 99000000,
+      "brand": 1,
+      "quantity": "10",
+      "status": 2
+    },
+    {
+      "id": "51d6",
+      "IDNgDung": 1,
+      "name": "SamSung Hahaa",
+      "type": 3,
+      "price": 4525243,
+      "brand": 2,
+      "quantity": "454",
+      "status": 2
+    },
+    {
+      "id": "6025",
+      "IDNgDung": 2,
+      "name": "REdminjaja",
+      "type": 2,
+      "price": 432545,
+      "brand": 3,
+      "quantity": "43",
+      "status": 2
+    },
+    {
+      "id": "5d7f",
+      "IDNgDung": 2,
+      "name": "Tivi SS",
+      "type": 2,
+      "price": 54256254,
+      "brand": 2,
+      "quantity": "323",
+      "status": 1
+    },
+    {
+      "id": "767f",
+      "IDNgDung": "1",
+      "name": "fsdfef",
+      "type": 1,
+      "price": 5453543,
+      "brand": 1,
+      "quantity": "543",
+      "status": 1
+    }
+  ],
+  "SPCT": [
+    {
+      "id": "1",
+      "idSP": 1,
+      "name": "Xiaomi Redmi Note 13",
+      "gia1": "2.000.000 đ",
+      "gia2": "5.000.000 đ",
+      "gia3": "9.000.000 đ",
+      "img": "content1.webp",
+      "imgNho1": "anhbeX1.webp",
+      "imgNho2": "anhbeX2.webp",
+      "tenAnh1": "Xanh lá",
+      "tenAnh2": "Đen"
+    },
+    {
+      "id": "2",
+      "idSP": 2,
+      "name": "Iphone 15 ProMax|VN",
+      "gia1": "30.000.000 đ",
+      "gia2": "50.000.000 đ",
+      "gia3": "40.000.000 đ",
+      "img": "content2.webp",
+      "imgNho1": "anhbe1.webp",
+      "imgNho2": "anhbe2.webp",
+      "tenAnh1": "Đen",
+      "tenAnh2": "Xám Titan"
+    },
+    {
+      "id": "3",
+      "idSP": 3,
+      "name": "SumSungGalaxy S23 Utra",
+      "gia1": "20.000.000 đ",
+      "gia2": "50.000.000 đ",
+      "gia3": "90.000.000 đ",
+      "img": "content3.webp",
+      "imgNho1": "anhbeS1.webp",
+      "imgNho2": "anhbeS2.webp",
+      "tenAnh1": "Đỏ",
+      "tenAnh2": "Đen"
+    }
+  ]
+}
